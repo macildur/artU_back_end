@@ -1,4 +1,5 @@
-from artU_back_end.Model.DOA.Factory.Factory import AbstractFactory
+from Model.DAO.Factory.Factory import AbstractFactory
+from Model.DAO.UserDAO import UserDAO
 
 
 class DynamoFactory(AbstractFactory):

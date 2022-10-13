@@ -1,8 +1,8 @@
-from artU_back_end.Model.DOA.Factory import Factory
+from Model.DAO.Factory import Factory
 
 
 class LoginService:
-    factory = Factory()
+    factory = Factory.AbstractFactory()
 
     def insertUser(self, newUser):
         pass
