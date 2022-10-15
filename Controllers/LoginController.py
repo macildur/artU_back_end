@@ -3,10 +3,9 @@ from Model.User import User
 
 
 class LoginController:
-    loginService = LoginService()
 
     def loginController(self):
-        pass
+        self.loginService = LoginService()
 
     def signup(self, event, context):
         newUser = User(event['username'], event['password'], event['firstname'], event['lastname'])
@@ -14,5 +13,5 @@ class LoginController:
         return success #needs to also return the object, and 200/400 instead of bool
 
     def login(self, event, context):
-        success = self.loginService.login(self, username, password)
+        success = self.loginService.login(self, event['username'], event['password'])
         return success #needs to also return the object, and 200/400 instead of bool

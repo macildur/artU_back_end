@@ -1,5 +1,5 @@
 from Model.DOA.Factory import Factory
-import bcrypt
+#import bcrypt
 
 class LoginService:
     factory = Factory.AbstractFactory()
