@@ -12,6 +12,25 @@ class LoginController:
         success = self.loginService.insertUser(newUser)
         return success #needs to also return the object, and 200/400 instead of bool
 
-    def login(self, event, context):
-        success = self.loginService.login(self, event['username'], event['password'])
-        return success #needs to also return the object, and 200/400 instead of bool
+def login(event, context):
+    loginService = LoginService()
+    try:
+        success = loginService.login(event.get('username'), event.get('password'))
+    except:
+        response = {
+            'statusCode': 400,
+            'isBase64Encoded': False,
+            'headers': { 'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json' },
+            'body': {"ErrorMessage":"Username or Password is incorrect"}
+        }
+        return response
+    else:
+        response = {
+            'statusCode': 200,
+            'isBase64Encoded': False,
+            'headers': { 'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json' },
+            'body': success
+        }
+        return response
