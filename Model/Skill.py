@@ -1,4 +1,4 @@
-from artU_back_end.Model.TeachingComponent import TeachingComponent
+from Model.TeachingComponent import TeachingComponent
 from enum import Enum
 
 
