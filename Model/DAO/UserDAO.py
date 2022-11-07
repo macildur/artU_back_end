@@ -47,4 +47,6 @@ class UserDAO:
             FilterExpression=Attr('username').eq(username)
         )
         item = response["Items"][0]
+        if item["password"]:
+            del item["password"]
         return item
