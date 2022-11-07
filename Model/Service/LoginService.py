@@ -1,8 +1,8 @@
-from Model.DOA.Factory import Factory
+from DynamoFactory import DynamoFactory
 #import bcrypt
 
 class LoginService:
-    factory = Factory.AbstractFactory()
+    factory = DynamoFactory()
 
     def login(self, username, password):
         salt = username[1] + username[0] + username[2]
