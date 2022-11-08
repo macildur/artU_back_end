@@ -7,7 +7,7 @@ class LessonDAO:
     def __init__(self):
         pass
 
-    def get_lesson(self, id):
+    def getLesson(self, id):
         client = boto3.resource('dynamodb')
 
         table = client.Table('lesson_table')

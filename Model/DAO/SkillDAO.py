@@ -7,7 +7,7 @@ class SkillDAO:
     def __init__(self):
         pass
 
-    def get_skill(self, id):
+    def getSkill(self, id):
         client = boto3.resource('dynamodb')
 
         table = client.Table('skill_table')
