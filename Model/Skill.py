@@ -1,5 +1,4 @@
 from Model.TeachingComponent import TeachingComponent
-from enum import Enum
 
 
 class Skill(TeachingComponent):

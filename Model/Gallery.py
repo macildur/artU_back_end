@@ -1,4 +1,6 @@
 class Gallery:
-    privateGallery = []
-    myAudienceFeed = []
-    discoverFeed = []
+
+    def __init__(self):
+        self.privateGallery = []
+        self.myAudienceFeed = []
+        self.discoverFeed = []
