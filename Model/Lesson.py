@@ -1,8 +1,6 @@
 from enum import Enum
 
 class Lesson():
-    moduleId = 0
-    lessonUrl = ''
 
     class LessonId(Enum):
         FIRST_LESSON = 1
