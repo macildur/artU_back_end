@@ -1,8 +1,6 @@
-from Model.TeachingComponent import TeachingComponent
 from enum import Enum
 
-
-class Lesson(TeachingComponent):
+class Lesson():
     moduleId = 0
     lessonUrl = ''
 

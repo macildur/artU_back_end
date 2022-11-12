@@ -1,10 +1,6 @@
-from Model.TeachingComponent import TeachingComponent
-from enum import Enum
+class Skill():
 
-
-class Skill(TeachingComponent):
-
-    def __init__(self, title):
-        super().__init__()
+    def __init__(self, title, images):
         self.title = title
+        self.images = images
 
