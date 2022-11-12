@@ -1,4 +1,6 @@
 class Notebook:
-    title = ''
-    pictureUrls = []
-    notes = []
+
+    def __init__(self, title, pictureUrls, notes):
+        self.title = ''
+        self.pictureUrls = []
+        self.notes = []

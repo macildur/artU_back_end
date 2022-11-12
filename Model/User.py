@@ -1,14 +1,6 @@
 import uuid
 
 class User:
-    id = 0
-    username = ''
-    firstname = ''
-    lastname = ''
-    password = ''
-    profilePictureUrl = ''
-    currentModule = 0
-    currentStreak = 0
 
     def __init__(self, username, firstname, lastname, password):
         self.id = uuid.uuid4()

@@ -3,8 +3,6 @@ from enum import Enum
 
 
 class Lesson(TeachingComponent):
-    moduleId = 0
-    lessonUrl = ''
 
     class LessonId(Enum):
         FIRST_LESSON = 1
