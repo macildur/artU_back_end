@@ -1,8 +1,6 @@
-from Model.TeachingComponent import TeachingComponent
 from enum import Enum
 
-
-class Module(TeachingComponent):
+class Module():
 
     class ModuleId(Enum):
         FIRST_MODULE = 1

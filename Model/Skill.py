@@ -1,9 +1,6 @@
-from Model.TeachingComponent import TeachingComponent
 
-
-class Skill(TeachingComponent):
+class Skill:
 
     def __init__(self, title):
         super().__init__()
         self.title = title
-
