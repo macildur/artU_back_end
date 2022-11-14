@@ -7,7 +7,7 @@ class UserDAO:
     def __init__(self):
         pass
 
-    def add_user(self, user):
+    def addUser(self, user):
         client = boto3.resource('dynamodb')
 
         table = client.Table('user_table')
@@ -38,7 +38,7 @@ class UserDAO:
 
         return True
 
-    def get_user(self, username, password):
+    def getUser(self, username, password):
         client = boto3.resource('dynamodb')
 
         table = client.Table('user_table')
@@ -47,4 +47,6 @@ class UserDAO:
             FilterExpression=Attr('username').eq(username)
         )
         item = response["Items"][0]
+        if item["password"]:
+            del item["password"]
         return item

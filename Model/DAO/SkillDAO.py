@@ -7,10 +7,10 @@ class SkillDAO:
     def __init__(self):
         pass
 
+
     def get_matching_images(self, requested_attrs):
         primary_category = requested_attrs["primary_category"]
         secondary_categories = requested_attrs["secondary_categories"]
-
         client = boto3.resource('dynamodb')
 
         table = client.Table('skill_table')
