@@ -18,12 +18,12 @@ class SkillDAO:
         if len(secondary_categories) == 2:
             response = table.scan(
                 FilterExpression=Attr('primary_category').eq(primary_category) & (
-                            Attr("secondary_categories").eq(secondary_categories[0]) | Attr("secondary_categories").eq(
+                            Attr("secondary_categories").contains(secondary_categories[0]) | Attr("secondary_categories").contains(
                         secondary_categories[1]))
             )
         elif len(secondary_categories) == 1:
             response = table.scan(
-                FilterExpression=Attr('primary_category').eq(primary_category) & Attr("secondary_categories").eq(
+                FilterExpression=Attr('primary_category').eq(primary_category) & Attr("secondary_categories").contains(
                     secondary_categories[0])
             )
 
