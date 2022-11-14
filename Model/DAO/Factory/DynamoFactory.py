@@ -1,5 +1,6 @@
 from Model.DAO.Factory.Factory import AbstractFactory
 from Model.DAO.UserDAO import UserDAO
+from Model.DAO.SkillDAO import SkillDAO
 
 
 class DynamoFactory(AbstractFactory):
@@ -8,7 +9,7 @@ class DynamoFactory(AbstractFactory):
         return UserDAO()
 
     def initSkillDAO(self):
-        pass
+        return SkillDAO()
 
     def initModuleDAO(self):
         pass
