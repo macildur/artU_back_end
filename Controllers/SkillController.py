@@ -6,8 +6,8 @@ class SkillController:
     def __init__(self):
         self.skillService = SkillService()
 
-    def getImages(self, requestedAttrs):
-        images = self.skillService.getMatchingImages(requestedAttrs)
+    def getImages(self, category, subCategories):
+        images = self.skillService.getMatchingImages(category, subCategories)
         random.shuffle(images)
 
         return images
