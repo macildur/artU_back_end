@@ -8,24 +8,22 @@ class SkillDAO:
         pass
 
     def getMatchingImages(self, requested_attrs):
-        primary_category = requested_attrs["primary_category"]
-        secondary_categories = requested_attrs["secondary_categories"]
-        client = boto3.resource('dynamodb')
+        attrs = []
+        for tag in ("primary_category", "secondary_category", "tertiary_category"):
+            cur_attr = requested_attrs[tag]
+            if cur_attr == "" and tag != "tertiary_category":
+                return f"Error: \'{tag}\' not selected. \'{tag}\' must be specified in order to search the database"
+            attrs.append(Attr(tag).eq(cur_attr))
 
+        fe = attrs[0]
+        for i in range(1, len(attrs) - 1):
+            fe = fe & attrs[i]
+
+        client = boto3.resource('dynamodb')
         table = client.Table('skill_table')
-        response = None
-        print("len_sec ", len(secondary_categories), "\n", secondary_categories)
-        if len(secondary_categories) == 2:
-            response = table.scan(
-                FilterExpression=Attr('primary_category').eq(primary_category) & (
-                            Attr("secondary_categories").contains(secondary_categories[0]) | Attr("secondary_categories").contains(
-                        secondary_categories[1]))
-            )
-        elif len(secondary_categories) == 1:
-            response = table.scan(
-                FilterExpression=Attr('primary_category').eq(primary_category) & Attr("secondary_categories").contains(
-                    secondary_categories[0])
-            )
+        response = table.scan(
+            FilterExpression=fe
+        )
 
         items = response["Items"]
 
