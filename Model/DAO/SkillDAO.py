@@ -26,8 +26,6 @@ class SkillDAO:
         )
 
         items = response["Items"]
+        items = [d["url"] for d in items]
 
-        return {
-            'statusCode': 200,
-            'body': items
-        }
+        return items
