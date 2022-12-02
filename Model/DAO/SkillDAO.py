@@ -19,7 +19,7 @@ class SkillDAO:
             attrs.append(Attr(tag).eq(cur_attr))
 
         fe = attrs[0]
-        for i in range(1, len(attrs) - 1):
+        for i in range(1, len(attrs)):
             fe = fe & attrs[i]
 
         client = boto3.resource('dynamodb')
