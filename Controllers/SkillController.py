@@ -7,21 +7,21 @@ import simplejson as json
 def getImages(event, context):
     skillService = SkillService()
     try:
-        category = json.loads(event.get("body")).get("category")
-        subCategory = json.loads(event.get("body")).get("subCategory")
-        gender = json.loads(event.get("body")).get("gender")
+        primaryCategory = json.loads(event.get("body")).get("primary_category")
+        secondary_category = json.loads(event.get("body")).get("secondary_category")
+        tertiary_category = json.loads(event.get("body")).get("tertiary_category")
 
         # images = None
-        Skill.validateImageTags(category, subCategory, skillService.getImageTags())
+        Skill.validateImageTags(primaryCategory, secondary_category, skillService.getImageTags())
 
-        if category and subCategory and gender:
-            # category, subCategory, gender
-            images = skillService.getMatchingImages(category, subCategory, gender)
+        if primaryCategory and secondary_category and tertiary_category:
+            # primaryCategory, secondary_category, tertiary_category
+            images = skillService.getMatchingImages(primaryCategory, secondary_category, tertiary_category)
             random.shuffle(images)
 
-        elif category and subCategory:
-            # category, subCategory
-            images = skillService.getMatchingImages(category, subCategory, None)
+        elif primaryCategory and secondary_category:
+            # primaryCategory, secondary_category
+            images = skillService.getMatchingImages(primaryCategory, secondary_category, None)
             random.shuffle(images)
 
         else:
