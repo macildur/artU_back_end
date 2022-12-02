@@ -11,8 +11,11 @@ class SkillDAO:
         attrs = []
         for tag in ("primary_category", "secondary_category", "tertiary_category"):
             cur_attr = requested_attrs[tag]
-            if cur_attr == "" and tag != "tertiary_category":
-                return f"Error: \'{tag}\' not selected. \'{tag}\' must be specified in order to search the database"
+            if cur_attr == "":
+                if tag != "tertiary_category":
+                    return f"Error: \'{tag}\' not selected. \'{tag}\' must be specified in order to search the database"
+                else:
+                    continue
             attrs.append(Attr(tag).eq(cur_attr))
 
         fe = attrs[0]
