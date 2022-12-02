@@ -44,6 +44,7 @@ zipObj.write('Model/DAO/Factory/DynamoFactory.py', 'DynamoFactory.py')
 zipObj.write('Model/DAO/Factory/Factory.py', 'Factory.py')
 zipObj.write('Controllers/SkillController.py', 'SkillController.py')
 zipObj.write('Model/Service/SkillService.py', 'SkillService.py')
+zipObj.write('Model/Skill.py', 'Skill.py')
 zipObj.write('Model/DAO/SkillDAO.py', 'SkillDAO.py')
 # close the Zip File
 zipObj.close()
