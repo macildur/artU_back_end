@@ -1,4 +1,4 @@
-from Model.DOA.Factory import Factory
+from Factory import Factory
 #import bcrypt
 
 class LoginService:
