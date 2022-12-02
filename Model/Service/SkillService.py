@@ -5,3 +5,6 @@ class SkillService:
 
     def getMatchingImages(self, category, subCategories, gender):
         return self.factory.initSkillDAO().getMatchingImages((category, subCategories, gender))
+
+    def getImageTags(self):
+        pass
