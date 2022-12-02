@@ -6,13 +6,13 @@ class Skill:
         self.title = title
 
     @staticmethod
-    def validateImageTags(primaryCategory, subCategory, tags):
+    def validateImageTags(primaryCategory, secondaryCategory, tags):
 
-        if primaryCategory not in tags or subCategory not in tags:
+        if primaryCategory not in tags or secondaryCategory not in tags:
             errorString = ''
             if primaryCategory not in tags:
                 errorString.join(primaryCategory)
-            elif subCategory not in tags:
-                errorString.join('and ' + subCategory)
+            elif secondaryCategory not in tags:
+                errorString.join('and ' + secondaryCategory)
 
             raise NameError(f"{errorString} tag not found")
