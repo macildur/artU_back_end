@@ -15,4 +15,4 @@ class Skill:
             elif subCategory not in tags:
                 errorString.join('and ' + subCategory)
 
-            raise Exception(f"{errorString} tag not found")
+            raise NameError(f"{errorString} tag not found")

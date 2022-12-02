@@ -7,4 +7,4 @@ class SkillService:
         return self.factory.initSkillDAO().getMatchingImages((category, subCategories, gender))
 
     def getImageTags(self):
-        pass
+        return self.factory.initImagetagDAO().get_image_tags()

@@ -12,6 +12,10 @@ class AbstractFactory(ABC):
         pass
 
     @abstractmethod
+    def initImageTagDAO(self):
+        pass
+
+    @abstractmethod
     def initModuleDAO(self):
         pass
 
