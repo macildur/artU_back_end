@@ -33,3 +33,18 @@ zipObj.write('Model/User.py', 'User.py')
 zipObj.write('Model/DAO/UserDAO.py', 'UserDAO.py')
 # close the Zip File
 zipObj.close()
+
+
+##SKILLS LAMBDA
+# create a ZipFile object
+zipObj = ZipFile('Deploy/Skills.zip', 'w')
+# Add multiple files to the zip
+zipObj.write('Controllers/BaseController.py', 'BaseController.py')
+zipObj.write('Model/DAO/Factory/DynamoFactory.py', 'DynamoFactory.py')
+zipObj.write('Model/DAO/Factory/Factory.py', 'Factory.py')
+zipObj.write('Controllers/SkillController.py', 'SkillController.py')
+zipObj.write('Model/Service/SkillService.py', 'SkillService.py')
+zipObj.write('Model/DAO/SkillDAO.py', 'SkillDAO.py')
+# close the Zip File
+zipObj.close()
+
